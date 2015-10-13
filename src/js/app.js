@@ -4,6 +4,10 @@ import './requestAnimationFrame.js';
 
 import Hanabi from './hanabi.js';
 
-window.onclick = () => {
-  new Hanabi('hanabi');
+window.onload = () => {
+  var hanabi = new Hanabi('hanabi');
+
+  window.onclick = () => {
+    hanabi.fire();
+  }
 }

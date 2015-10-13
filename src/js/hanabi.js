@@ -3,11 +3,12 @@
 export default class Hanabi {
   constructor(id) {
     this.initCanvas(id);
+    this.isFiring = false;
     this.settings = {
       // 個数
       quantity: 300,
       // スピード
-      speed: 3.5,
+      speed: 4,
       // 重力
       gravity: 0.9,
       // 減衰力
@@ -17,7 +18,6 @@ export default class Hanabi {
       // 色
       color: '#DA5019'
     };
-    this.fire();
   }
 
   initCanvas(id) {
@@ -34,10 +34,15 @@ export default class Hanabi {
     let radian = Math.PI * 2;
 
     for (let i = 0; i <= this.settings.quantity; i++) {
+
+      let vx = 0;
+      let vy = 0;
+      let speed = 0;
+
       var angle = Math.random() * radian;
-      let vx = Math.cos(angle);
-      let vy = Math.sin(angle);
-      let speed = Math.random() * this.settings.speed;
+      vx = Math.cos(angle);
+      vy = Math.sin(angle);
+      speed = Math.random() * this.settings.speed;
 
       vx *= speed;
       vy *= speed;
@@ -59,10 +64,16 @@ export default class Hanabi {
     this.ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
     this.particleSize *= 0.97;
+    if (this.particleSize < 0.03) {
+      this.isFiring = false;
+      return;
+    }
     requestAnimationFrame(this.update.bind(this));
   }
 
   fire() {
+    if (this.isFiring == true) return;
+    this.isFiring = true;
     this.particleSize = this.settings.particleSize;
     this.particles = [];
     this.initParticles();
