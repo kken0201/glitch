@@ -34,7 +34,7 @@ gulp.task('browserify', function() {
 });
 
 gulp.task('stylus', function() {
-  return gulp.src([dir.src + '/{,**/}*.styl', '!src/assets/stylesheets/{,**/}_*.styl'])
+  return gulp.src([dir.src + '/{,**/}*.styl', '!/{,**/}_*.styl'])
     .pipe($.plumber({
       errorHandler: $.notify.onError('Error: <%= error.message %>')
     }))
@@ -42,7 +42,7 @@ gulp.task('stylus', function() {
       use: nib(),
       compress: false
     }))
-    .pipe(gulp.dest(dir.dist + '/css'))
+    .pipe(gulp.dest(dir.dist))
     .pipe(browserSync.reload({
       stream: true
     }));

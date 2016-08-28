@@ -1,0 +1,97 @@
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+}
+.material-icons.md-dark {
+  color: rgba(0,0,0,0.54);
+}
+.material-icons.md-dark.md-inactive {
+  color: rgba(0,0,0,0.26);
+}
+.material-icons.md-light {
+  color: #fff;
+}
+.material-icons.md-light.md-inactive {
+  color: rgba(255,255,255,0.3);
+}
+* {
+  box-sizing: border-box;
+}
+button {
+  -webkit-appearance: none;
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+button:focus {
+  outline: 0;
+}
+html,
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.canvas-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 10px;
+}
+.switch-camera {
+  position: relative;
+}
+.switch-camera-menu {
+  position: absolute;
+  right: 10px;
+  top: 50px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.2), 0 1px 5px 0 rgba(0,0,0,0.12);
+}
+.switch-camera-menu li {
+  background-color: #fff;
+  line-height: 48px;
+  padding: 0 16px;
+  white-space: nowrap;
+  letter-spacing: 1px;
+}
+.save-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 2;
+  transform: translate3d(0, -50%, 0);
+}
+.button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.4);
+  box-shadow: 0 0 3px 0 rgba(0,0,0,0.2);
+}

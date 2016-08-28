@@ -3,7 +3,20 @@ html(lang="ja")
   head
     title GlitchYou
     meta(charset='UTF-8')
-  body(style="padding:0;margin:0;")
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    link(href="./css/main.css" rel="stylesheet")
+  body
+    .header
+      header
+        .header-inner
+          .switch-filter
+            button.switch-fliter-button.button.material-icons.md-light.md-24(data-switch-filter) filter
+          .switch-camera
+            button.switch-camera-button.button.material-icons.md-light.md-24(data-switch-camera) switch_camera
+            ul.switch-camera-menu
+              li 前面
+              li 背面
     video#webcam(autoplay="1" style="display:none;")
+    button.save-button.button.material-icons.md-light.md-24 save
     
     script(src="./bundle.js")

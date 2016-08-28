@@ -12,7 +12,7 @@ window.URL = window.URL || window.webkitURL ;
 
 function initialize() {
 	navigator.getUserMedia(
-		{audio: true, video: true},
+		{audio: false, video: true},
 		function(stream) {
 			var video = document.getElementById('webcam');
       video.crossOrigin = 'anonymous';
@@ -37,6 +37,7 @@ function renderStart() {
 
   // キャンバスを配置するdiv要素を作成し、bodyに追加
   var container = document.createElement('div');
+  container.className = 'canvas-wrapper';
   container.style.width = window.innerWidth + 'px';
   container.style.height = window.innerHeight + 'px';
   container.style.overflow = 'hidden';

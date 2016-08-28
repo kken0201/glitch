@@ -3,9 +3,28 @@
   <head>
     <title>GlitchYou</title>
     <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet">
   </head>
-  <body style="padding:0;margin:0;">
+  <body>
+    <div class="header">
+      <header>
+        <div class="header-inner">
+          <div class="switch-filter">
+            <button data-switch-filter class="switch-fliter-button button material-icons md-light md-24">filter</button>
+          </div>
+          <div class="switch-camera">
+            <button data-switch-camera class="switch-camera-button button material-icons md-light md-24">switch_camera</button>
+            <ul class="switch-camera-menu">
+              <li>前面</li>
+              <li>背面</li>
+            </ul>
+          </div>
+        </div>
+      </header>
+    </div>
     <video id="webcam" autoplay="1" style="display:none;"></video>
+    <button class="save-button button material-icons md-light md-24">save</button>
     <script src="./bundle.js"></script>
   </body>
 </html>
